@@ -1,13 +1,8 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
 local ScreenGui = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
 local TopBoarder = Instance.new("Frame")
 local MainName = Instance.new("TextLabel")
-local namecolor = Instance.new("UIGradient")
+local BoarderColor = Instance.new("UIGradient")
 local Frame = Instance.new("Frame")
 local UIPageLayout = Instance.new("UIPageLayout")
 local Frame_2 = Instance.new("Frame")
@@ -47,9 +42,9 @@ MainName.Text = "G.A"
 MainName.TextColor3 = Color3.fromRGB(187, 195, 31)
 MainName.TextSize = 14.000
 
-namecolor.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(182, 182, 182)), ColorSequenceKeypoint.new(0.12, Color3.fromRGB(135, 75, 188)), ColorSequenceKeypoint.new(0.37, Color3.fromRGB(66, 48, 203)), ColorSequenceKeypoint.new(0.68, Color3.fromRGB(238, 49, 75)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
-namecolor.Name = "name color"
-namecolor.Parent = MainName
+BoarderColor.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 85, 255)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(0, 85, 255)), ColorSequenceKeypoint.new(0.84, Color3.fromRGB(192, 15, 15)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 0))}
+BoarderColor.Name = "Boarder Color"
+BoarderColor.Parent = MainName
 
 Frame.Parent = Main
 Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -81,23 +76,3 @@ ScrollingFrame.ScrollBarThickness = 3
 
 UIListLayout.Parent = ScrollingFrame
 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-
--- Scripts:
-
-local function PIYGG_fake_script() -- namecolor.color effect script 
-	local script = Instance.new('LocalScript', namecolor)
-
-	local UIGradient = script.parent
-	while true do
-		UIGradient.Rotation += 1
-		wait()
-	end
-end
-coroutine.wrap(PIYGG_fake_script)()
-local function KJVM_fake_script() -- Main.Drag UI Script 
-	local script = Instance.new('LocalScript', Main)
-
-	script.Parent.Draggable = true
-	script.Parent.Active = true
-end
-coroutine.wrap(KJVM_fake_script)()
